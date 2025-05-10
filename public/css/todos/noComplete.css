@@ -1,0 +1,292 @@
+html,body{
+    height: 100%;
+}
+
+
+
+
+.container{
+    display: flex;
+}
+
+/*サイドメニュー*/
+
+nav{
+    background-color: #f2f2f2;
+    flex: 0.5;
+    height: 100vh;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav li{
+    flex: 100%;
+    padding: 10px 10px;
+    display: inline-block; 
+    width: 40px;
+    height: 40px;
+    margin: 0;
+}
+
+nav li img{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+nav li:hover{
+    cursor: pointer;
+    background-color: black;
+}
+
+
+
+/*メイン*/
+
+main{
+    flex: 9.5;
+    height: 100vh;
+}
+
+
+/*todoヘッダー*/
+
+.todo-header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #f2f2f2;
+    margin: 20px;
+}
+
+.todo-header .todo-add{
+    border: 2px solid transparent;
+    margin: 0;
+    padding: 10px;
+}
+
+.todo-header .todo-add:hover{
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.todo-header .new-task{
+    display: none;
+}
+
+h1{
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+
+.not-completed{
+    font-size: 20px;
+}
+
+
+.completed{
+    font-size: 22px;
+}
+
+.not-completed,.completed{
+    cursor: pointer;
+}
+
+
+.todo-header img{
+    height: 20px;
+    width: 20px;
+}
+
+.add{
+    font-size: 22px;
+    margin:0;
+}
+
+.add-img{
+    margin-right: 10px;
+}
+
+
+
+/*タスクヘッダー*/
+
+.todo-main{
+    margin: 20px;
+    margin-top: -5px;
+}
+
+
+/*カラムヘッダー*/
+.taskHeader{
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h2{
+    margin: 0;
+}
+
+/*noカラムヘッダー*/
+.noColumn{
+    flex: 0.5;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 400;
+    border-right: 1px solid #e0e0e0;
+    padding-left: 10px;
+}
+
+/*タスクカラムヘッダー*/
+.taskColumn{
+    flex:5.5;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 10px;
+    border-right: 1px solid #e0e0e0;
+}
+
+/*作成日カラム*/
+.createdDataColumn{
+    flex: 3;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 10px;
+    border-right: 1px solid #e0e0e0;
+}
+
+/*重要度カラム*/
+.priorityColumn{
+    flex:1;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 10px;
+    border-right: 1px solid #e0e0e0;
+}
+
+/*進行状況カラム*/
+.checkColumn{
+    flex: 1;
+    text-align: left;
+    font-size: 18px;
+    padding-left: 10px;
+    font-weight: 400;
+}
+
+
+
+/*タスクメイン*/
+
+.lists{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lists li{
+    display: flex;
+    margin: 0;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.lists p{
+    margin: 0;
+}
+
+/*noタスク*/
+.no{
+    flex: 0.5;
+    text-align: right;
+    font-size: 18px;
+    border-right: 1px solid #e0e0e0;
+    padding-right: 10px;
+}
+
+/*タスク名*/
+.taskName{
+    flex:5.5;
+    text-align: left;
+    font-size: 18px;
+    border-right: 1px solid #e0e0e0;
+    padding-left: 10px;
+}
+
+/*作成日*/
+.createdData{
+    flex: 3;
+    text-align: left;
+    font-size: 18px;
+    border-right: 1px solid #e0e0e0;
+    padding-left: 10px;
+}
+
+/*重要度*/
+.priority{
+    flex:1;
+    text-align: center;
+    font-size: 18px;
+    border-right: 1px solid #e0e0e0;
+    padding-left: 10px;
+}
+
+/*進行状況*/
+.check{
+    flex: 1;
+    text-align: center;
+    padding-left: 10px;
+    font-size: 18px
+}
+
+.check input{
+    font-size: 18px;
+}
+
+
+
+
+/*todo-main
+
+.lists{
+    margin:40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.lists li{
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid transparent;
+}
+
+.lists li:hover{
+    cursor: pointer;
+}
+
+.lists input{
+    width: 18px;
+    height: 18px;
+    vertical-align: baseline;
+    padding: 0px;
+    margin: 0;
+}
+
+*/
