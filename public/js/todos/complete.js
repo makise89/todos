@@ -27,6 +27,12 @@ document.getElementById('lists').addEventListener('click',async(e)=>{
                 });
 }});        
         
+
+//サイドメニューを出現する処理
+document.querySelector('.menu').addEventListener('click',()=>{
+    document.querySelector('.menu').classList.toggle('active');
+    document.querySelector('nav').classList.toggle('active');
+})
         
 
 

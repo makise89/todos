@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Todo; 
 use App\Models\Complete;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class TodoController extends Controller
 {
@@ -14,8 +15,9 @@ class TodoController extends Controller
 
     public function index(){
         //描画する処理
-        $todos = Todo::orderBy('priority', 'desc')->get();
-        return view("todos.noComplete",['todos' => $todos]);
+        $user_id = Auth()->id();
+        $tasks = Todo::where('user_id',$user_id)->get();
+        return view("todos.noComplete",['todos' => $tasks]);
     }
 
     //タスク追加の処理
@@ -24,6 +26,7 @@ class TodoController extends Controller
         $title = $request->input('title');
         $todoClass = new Todo();
         $todoClass->title = $title;
+        $todoClass->user_id = Auth()->id();
         $todoClass->save();
 
         return response()->json([
@@ -42,6 +45,7 @@ class TodoController extends Controller
         if($todo){
             $completeClass = new Complete();
             $completeClass->title = $todo->title;
+            $completeClass->user_id = Auth()->id();
             $completeClass->save();
             $todo->delete();
         }
@@ -51,7 +55,8 @@ class TodoController extends Controller
     //completeのロード
 
     public function complete(){
-            $complete = DB::table('completes')->get();
+        $user_id = Auth()->id();
+        $complete = Complete::where('user_id',$user_id)->get();
        return view('todos.complete',['complete'=>$complete]);
     }
 
@@ -62,11 +67,11 @@ class TodoController extends Controller
 
     public function taskRestore(Request $request){
         $id = $request->input('id');
-        dump($id);
         if($id){
             $todos = new Todo();
             $complete = Complete::find($id);
             $todos->title=$complete->title;
+            $todos->user_id=$complete->user_id;
             $todos->save();
             $complete->delete();
         }

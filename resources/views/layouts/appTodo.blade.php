@@ -18,11 +18,19 @@
         </nav>
     
         <main>
+            <h1 class="sumaho-h1">タスク</h1>
+
+            <div class="menu">
+               <span></span>
+               <span></span>
+               <span></span>
+            </div>
+
             <div class="todo-header">
                 <h1>タスク</h1>
                 <a href="/" id="noComplete" class="not-completed">未完了</a>
                 <a href="/complete" id="complete" class="completed">完了</a>
-                <label class="todo-add" id="todo-add"><p class="add"><img src="images/todo/add.png" class="add-img" alt="追加マーク">追加</p></label>
+                <label class="todo-add" id="todo-add"><p class="add">追加</p></label>
                 <form method = "post" id="new-task" class = "new-task">
                     <label>
                         <input type="text" name="task" id="task-title">

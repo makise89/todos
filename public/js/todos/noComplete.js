@@ -4,9 +4,16 @@
 //追加するスペースを出現
 
 const todoAdd = document.getElementById('todo-add');
+const check = document.querySelector('.add');
 
 todoAdd.addEventListener('click',()=>{
-document.getElementById('new-task').style.display="block";
+    if(check.textContent === "追加"){
+    document.getElementById('new-task').style.display="block";
+    check.textContent="閉じる";
+}else if(check.textContent==="閉じる"){
+    document.getElementById('new-task').style.display="none";
+    check.textContent="追加";
+}
 });
 
 
@@ -43,6 +50,7 @@ try{
     //リセット処理
     document.getElementById('task-title').value = '';
     document.getElementById('new-task').style.display="none";
+    document.querySelector('.add').textContent="追加";
 
     //エラー処理
 }catch(error){
@@ -114,3 +122,11 @@ document.querySelectorAll('.priority').forEach((data)=>{
         
     });
 })
+
+
+
+//サイドメニューを出現する処理
+document.querySelector('.menu').addEventListener('click',()=>{
+    document.querySelector('.menu').classList.toggle('active');
+    document.querySelector('nav').classList.toggle('active');
+});

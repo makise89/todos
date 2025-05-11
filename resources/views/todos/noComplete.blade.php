@@ -28,7 +28,7 @@
                 <li class="{{$todo->id}}">
                     <p class="no">{{$loop->iteration}}</p>
                     <p class="taskName">{{$todo->title}}</p>
-                    <p class="createdData">{{$todo->created_at}}</p>
+                    <p class="createdData">{{$todo->created_at->format('Y年m月d日')}}</p>
                     <p class="priority">☆</p>
                     <p class="check"><input type="checkbox" id="check" class="{{$todo->id}}"></p>
                 </li>
